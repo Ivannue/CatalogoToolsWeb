@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\CatalogoToolsWebSite\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-01T19:44:02.222Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
