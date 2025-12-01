@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj": {}
+    "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj": {}
   },
   "projects": {
-    "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj": {
+    "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj",
+        "projectUniqueName": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj",
         "projectName": "CatalogoToolsWeb",
-        "projectPath": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj",
+        "projectPath": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb.csproj",
         "packagesPath": "C:\\Users\\Usuarioo\\.nuget\\packages\\",
-        "outputPath": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\CatalogoToolsWeb\\obj\\",
+        "outputPath": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

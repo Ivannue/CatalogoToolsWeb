@@ -19,45 +19,45 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
 build_property.RootNamespace = CatalogoToolsWeb
 build_property.RootNamespace = CatalogoToolsWeb
-build_property.ProjectDir = C:\CatalogoToolsWebSite\CatalogoToolsWeb\CatalogoToolsWeb\
+build_property.ProjectDir = C:\CatalogoToolsWebSite\CatalogoToolsWeb\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\CatalogoToolsWebSite\CatalogoToolsWeb\CatalogoToolsWeb
+build_property.MSBuildProjectDirectory = C:\CatalogoToolsWebSite\CatalogoToolsWeb
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/Home/Index.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/Home/Privacy.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/Home/UploadLogo.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/Home/UploadLogo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWRMb2dvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/Shared/Error.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/_ViewImports.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/_ViewStart.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CatalogoToolsWebSite/CatalogoToolsWeb/CatalogoToolsWeb/Views/Shared/_Layout.cshtml]
+[C:/CatalogoToolsWebSite/CatalogoToolsWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-hus9px3moy
