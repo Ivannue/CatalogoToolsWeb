@@ -21,6 +21,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
+     * Validate URL to ensure it's safe for use in href attribute
+     * @param {string} url - The URL to validate
+     * @returns {string} - Validated URL or empty string if invalid
+     */
+    function validateURL(url) {
+        if (typeof url !== 'string') {
+            return '';
+        }
+        try {
+            const parsed = new URL(url);
+            if (parsed.protocol === 'https:' || parsed.protocol === 'http:') {
+                return url;
+            }
+            return '';
+        } catch (e) {
+            return '';
+        }
+    }
+
+    /**
      * Render tools to the grid
      * @param {Array} tools - Array of tool objects to render
      */
@@ -31,12 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         toolsGrid.innerHTML = tools.map(function(tool) {
+            const validatedUrl = validateURL(tool.url);
             return '<article class="tool-card">' +
                 '<span class="icon">' + sanitizeHTML(tool.icon) + '</span>' +
                 '<h3>' + sanitizeHTML(tool.name) + '</h3>' +
                 '<span class="category-tag">' + sanitizeHTML(getCategoryName(tool.category)) + '</span>' +
                 '<p>' + sanitizeHTML(tool.description) + '</p>' +
-                '<a href="' + sanitizeHTML(tool.url) + '" target="_blank" rel="noopener noreferrer" class="tool-link">Visitar</a>' +
+                '<a href="' + validatedUrl + '" target="_blank" rel="noopener noreferrer" class="tool-link">Visitar</a>' +
             '</article>';
         }).join('');
     }
@@ -47,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
      * @returns {string} - Display name
      */
     function getCategoryName(category) {
-        var names = {
+        const names = {
             'frontend': 'Frontend',
             'backend': 'Backend',
             'design': 'Diseño',
@@ -60,12 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
      * Filter tools based on search term and category
      */
     function filterTools() {
-        var searchTerm = searchInput.value.toLowerCase().trim();
+        const searchTerm = searchInput.value.toLowerCase().trim();
         
-        var filteredTools = toolsData.filter(function(tool) {
-            var matchesSearch = tool.name.toLowerCase().includes(searchTerm) ||
+        const filteredTools = toolsData.filter(function(tool) {
+            const matchesSearch = tool.name.toLowerCase().includes(searchTerm) ||
                                tool.description.toLowerCase().includes(searchTerm);
-            var matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
+            const matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
             
             return matchesSearch && matchesCategory;
         });
