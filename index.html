@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Herramientas Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🛠️ Catálogo de Herramientas Web</h1>
+            <p class="subtitle">Descubre las mejores herramientas para desarrollo web</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Buscar herramientas..." aria-label="Buscar herramientas">
+        </section>
+
+        <section class="categories">
+            <button class="category-btn active" data-category="all">Todas</button>
+            <button class="category-btn" data-category="frontend">Frontend</button>
+            <button class="category-btn" data-category="backend">Backend</button>
+            <button class="category-btn" data-category="design">Diseño</button>
+            <button class="category-btn" data-category="devops">DevOps</button>
+        </section>
+
+        <section class="tools-grid" id="toolsGrid">
+            <!-- Tools will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Catálogo de Herramientas Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/tools-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
