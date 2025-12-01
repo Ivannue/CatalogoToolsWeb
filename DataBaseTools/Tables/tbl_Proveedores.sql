@@ -1,0 +1,13 @@
+CREATE TABLE tbl_Proveedores (
+    nId INT IDENTITY(1,1) PRIMARY KEY,
+    nNombre VARCHAR(150) NOT NULL,
+    iLogo image,
+    dFechaInsercion DATETIME NOT NULL DEFAULT GETDATE(),
+    bActivo bit NOT NULL DEFAULT 1
+);
+GO
+INSERT INTO tbl_Proveedores (nNombre)
+VALUES
+('3M'),('AirVANTAGE'),('AUSTROMEX'),('BASF'),('ByP'),('CORONA'),('CUPRUM'),('DeVILBISS'),('DeWALT'),('ECUA PLASTICS'),('EVERCOAT'),('ÉXITO'),('FANDELI'),('FROST KING'),('GERSON'),('GONI'),('GRACO'),('HENKEL'),('IMPAC'),('JB WELD'),('KLINGSPOR'),('KOLA LOKA'),('KOVAC'),('KRYLON'),('LENOX'),('MARKAL'),('MASTER LOCK'),('MERIDIAN'),('NORTON'),('PBE'),('PERFECT'),('PFERD'),('PREVAL'),('QUALITECH'),('SHURTAPE'),('STANLEY'),('TEK BOND'),('TRIMACO'),('TRM'),('TURTLE WAX'),('ULTRA COLOR'),('USC'),('WARNER'),('WD40Z'),('RED DEVIL');
+GO
+SELECT * FROM tbl_Proveedores;
