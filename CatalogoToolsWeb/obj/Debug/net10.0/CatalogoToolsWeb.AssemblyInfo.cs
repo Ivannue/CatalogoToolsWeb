@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CatalogoToolsWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccebf9bb2066e3d06befd3f1674eba33feb71c88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e41327660fdc8cf2bca3ed640785df95c924e187")]
 [assembly: System.Reflection.AssemblyProductAttribute("CatalogoToolsWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CatalogoToolsWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

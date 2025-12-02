@@ -242,8 +242,8 @@ C:\CatalogoToolsWebSite\CatalogoToolsWeb\CatalogoToolsWeb\obj\Debug\net10.0\Cata
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\CatalogoToolsWeb\obj\Debug\net10.0\ref\CatalogoToolsWeb.dll
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\appsettings.Development.json
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\appsettings.json
-C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\CatalogoToolsWeb.staticwebassets.endpoints.json
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\CatalogoToolsWeb.staticwebassets.runtime.json
+C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\CatalogoToolsWeb.staticwebassets.endpoints.json
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\CatalogoToolsWeb.exe
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\CatalogoToolsWeb.deps.json
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\bin\Debug\net10.0\CatalogoToolsWeb.runtimeconfig.json

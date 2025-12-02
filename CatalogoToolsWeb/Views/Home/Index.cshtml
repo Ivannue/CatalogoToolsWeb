@@ -4,7 +4,50 @@
     ViewData["Title"] = "Proveedores";
 }
 
-<h1>Proveedores</h1>
+<h1>Lista de Proveedores</h1>
+
+<div class="mb-3">
+    <!-- Botón que abre el modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createProveedorModal">
+        Añadir proveedor
+    </button>
+</div>
+
+<!-- Modal para crear proveedor -->
+<div class="modal fade" id="createProveedorModal" tabindex="-1" aria-labelledby="createProveedorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createProveedorModalLabel">Nuevo proveedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombreInput" class="form-label">Nombre</label>
+                        <input id="nombreInput" name="nombre" class="form-control" placeholder="Nombre" maxlength="150" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="logoFileInput" class="form-label">Logo (opcional)</label>
+                        <input id="logoFileInput" type="file" name="logoFile" class="form-control" accept="image/*" />
+                        <div class="form-text">Máx. 2 MB. Tipos de imagen permitidos.</div>
+                    </div>
+
+                    @* <div class="form-check mb-0">
+                        <input id="activoInput" name="activo" type="checkbox" class="form-check-input" checked />
+                        <label for="activoInput" class="form-check-label">Activo</label>
+                    </div> *@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar proveedor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <table class="table table-striped table-sm">
     <thead class="table-light">
@@ -14,6 +57,7 @@
             <th>Logo</th>
             <th>Fecha inserción</th>
             <th>Activo</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -36,9 +80,123 @@
                 <td>@item.FechaInsercion.ToString("yyyy-MM-dd")</td>
                 <td>@(item.Activo ? "Sí" : "No")</td>
                 <td>
-                    <a asp-action="UploadLogo" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Subir logo</a>
+                    <form asp-action="ToggleActive" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button class="btn btn-sm @(item.Activo ? "btn-outline-danger" : "btn-outline-success")" type="submit">
+                            @(item.Activo ? "Desactivar" : "Activar")
+                        </button>
+                    </form>
+
+                    @* Botón que abre modal de subir logo. Pasamos datos por attributes *@
+                    @{
+                        var logoAttr = item.Logo != null && item.Logo.Length > 0 ? Convert.ToBase64String(item.Logo) : string.Empty;
+                    }
+                    <button type="button"
+                            class="btn btn-sm btn-outline-primary ms-1"
+                            data-bs-toggle="modal"
+                            data-bs-target="#uploadLogoModal"
+                            data-id="@item.Id"
+                            data-nombre="@Html.Raw(Html.Encode(item.Nombre))"
+                            data-logo="@logoAttr">
+                        Subir logo
+                    </button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@* Modal para subir logo *@
+<div class="modal fade" id="uploadLogoModal" tabindex="-1" aria-labelledby="uploadLogoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="UploadLogo" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadLogoModalLabel">Subir logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="uploadLogoId" value="" />
+                    <div class="mb-3 text-center">
+                        <img id="uploadLogoCurrentImg" src="" alt="Logo actual" style="max-height:120px; display:none;" class="mb-2" />
+                        <p id="uploadLogoNoLogo" class="text-muted mb-0">Sin logo actualmente.</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="uploadLogoFile" class="form-label">Selecciona imagen (máx 2 MB)</label>
+                        <input class="form-control" type="file" id="uploadLogoFile" name="logoFile" accept="image/*" />
+                        <div class="form-text">Tipos de imagen permitidos. Máx. 2 MB.</div>
+                        <div id="uploadLogoError" class="text-danger" style="display:none;"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Subir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            // Limpiar formulario modal de crear proveedor al cerrar
+            var createModalEl = document.getElementById('createProveedorModal');
+            if (createModalEl) {
+                createModalEl.addEventListener('hidden.bs.modal', function () {
+                    var form = createModalEl.querySelector('form');
+                    if (form) form.reset();
+                });
+            }
+
+            // Rellenar modal de subir logo al abrir
+            var uploadModalEl = document.getElementById('uploadLogoModal');
+            if (!uploadModalEl) return;
+
+            uploadModalEl.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget;
+                if (!button) return;
+
+                var id = button.getAttribute('data-id') || '';
+                var nombre = button.getAttribute('data-nombre') || '';
+                var logo = button.getAttribute('data-logo') || '';
+
+                document.getElementById('uploadLogoModalLabel').textContent = 'Subir logo: ' + nombre;
+                document.getElementById('uploadLogoId').value = id;
+
+                var img = document.getElementById('uploadLogoCurrentImg');
+                var noLogo = document.getElementById('uploadLogoNoLogo');
+
+                if (logo) {
+                    img.src = 'data:image/png;base64,' + logo;
+                    img.style.display = 'block';
+                    noLogo.style.display = 'none';
+                } else {
+                    img.src = '';
+                    img.style.display = 'none';
+                    noLogo.style.display = 'block';
+                }
+
+                // limpiar input file y errores previos
+                var fileInput = document.getElementById('uploadLogoFile');
+                if (fileInput) fileInput.value = '';
+                var err = document.getElementById('uploadLogoError');
+                if (err) { err.style.display = 'none'; err.textContent = ''; }
+            });
+
+            // limpiar al ocultar modal
+            uploadModalEl.addEventListener('hidden.bs.modal', function () {
+                var form = uploadModalEl.querySelector('form');
+                if (form) form.reset();
+
+                var img = document.getElementById('uploadLogoCurrentImg');
+                var noLogo = document.getElementById('uploadLogoNoLogo');
+                if (img) { img.src = ''; img.style.display = 'none'; }
+                if (noLogo) { noLogo.style.display = 'block'; }
+            });
+        })();
+    </script>
+}
