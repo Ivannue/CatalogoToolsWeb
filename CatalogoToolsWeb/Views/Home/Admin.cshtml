@@ -6,6 +6,15 @@
 
 <h1>Lista de Proveedores</h1>
 
+@if (TempData["UploadImagesError"] != null)
+{
+    <div class="alert alert-danger">@TempData["UploadImagesError"]</div>
+}
+@if (TempData["UploadImagesSuccess"] != null)
+{
+    <div class="alert alert-success">@TempData["UploadImagesSuccess"]</div>
+}
+
 <div class="mb-3">
     <!-- Botón que abre el modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createProveedorModal">
@@ -101,6 +110,16 @@
                             data-logo="@logoAttr">
                         Subir logo
                     </button>
+
+                    @* Nuevo botón: subir múltiples imágenes (productos) *@
+                    <button type="button"
+                            class="btn btn-sm btn-outline-secondary ms-1"
+                            data-bs-toggle="modal"
+                            data-bs-target="#uploadImagesModal"
+                            data-id="@item.Id"
+                            data-nombre="@Html.Raw(Html.Encode(item.Nombre))">
+                        Subir imágenes
+                    </button>
                 </td>
             </tr>
         }
@@ -134,6 +153,39 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Subir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* Modal nuevo: subir múltiples imágenes para tbl_Productos *@
+<div class="modal fade" id="uploadImagesModal" tabindex="-1" aria-labelledby="uploadImagesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="UploadImages" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadImagesModalLabel">Subir imágenes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="uploadImagesId" value="" />
+                    <div class="mb-3 text-center">
+                        <p id="uploadImagesForProvider" class="mb-0 text-muted"></p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="uploadImagesFiles" class="form-label">Selecciona imágenes (múltiples, máx 2 MB c/u)</label>
+                        <input class="form-control" type="file" id="uploadImagesFiles" name="imageFiles" accept="image/*" multiple />
+                        <div class="form-text">Cada imagen debe ser ≤ 2 MB. Se guardará el nombre del archivo en `nNombre` y los bytes en `iImage`.</div>
+                        <div id="uploadImagesError" class="text-danger" style="display:none;"></div>
+                        <div id="uploadImagesSelected" class="form-text mt-2"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Subir imágenes</button>
                 </div>
             </form>
         </div>
@@ -197,6 +249,72 @@
                 if (img) { img.src = ''; img.style.display = 'none'; }
                 if (noLogo) { noLogo.style.display = 'block'; }
             });
+
+            // --- Nuevo: subir múltiples imágenes ---
+            var uploadImagesModal = document.getElementById('uploadImagesModal');
+            if (uploadImagesModal) {
+                uploadImagesModal.addEventListener('show.bs.modal', function (event) {
+                    var button = event.relatedTarget;
+                    if (!button) return;
+
+                    var id = button.getAttribute('data-id') || '';
+                    var nombre = button.getAttribute('data-nombre') || '';
+
+                    document.getElementById('uploadImagesModalLabel').textContent = 'Subir imágenes: ' + nombre;
+                    document.getElementById('uploadImagesId').value = id;
+                    document.getElementById('uploadImagesForProvider').textContent = 'Proveedor: ' + nombre;
+
+                    var fileInput = document.getElementById('uploadImagesFiles');
+                    if (fileInput) {
+                        fileInput.value = '';
+                    }
+                    var sel = document.getElementById('uploadImagesSelected');
+                    if (sel) sel.textContent = '';
+                    var err = document.getElementById('uploadImagesError');
+                    if (err) { err.style.display = 'none'; err.textContent = ''; }
+                });
+
+                uploadImagesModal.addEventListener('hidden.bs.modal', function () {
+                    var form = uploadImagesModal.querySelector('form');
+                    if (form) form.reset();
+                    var sel = document.getElementById('uploadImagesSelected');
+                    if (sel) sel.textContent = '';
+                    var err = document.getElementById('uploadImagesError');
+                    if (err) { err.style.display = 'none'; err.textContent = ''; }
+                });
+
+                // Mostrar archivos seleccionados y validación cliente básica
+                var imagesInput = document.getElementById('uploadImagesFiles');
+                if (imagesInput) {
+                    imagesInput.addEventListener('change', function () {
+                        var files = imagesInput.files;
+                        var sel = document.getElementById('uploadImagesSelected');
+                        var err = document.getElementById('uploadImagesError');
+                        sel.textContent = '';
+                        err.style.display = 'none';
+                        err.textContent = '';
+
+                        if (!files || files.length === 0) return;
+
+                        var names = [];
+                        for (var i = 0; i < files.length; i++) {
+                            var f = files[i];
+                            if (!f.type.startsWith('image/')) {
+                                err.style.display = 'block';
+                                err.textContent = "Todos los archivos deben ser imágenes.";
+                                return;
+                            }
+                            if (f.size > 2 * 1024 * 1024) {
+                                err.style.display = 'block';
+                                err.textContent = "Cada imagen debe tener como máximo 2 MB.";
+                                return;
+                            }
+                            names.push(f.name);
+                        }
+                        sel.textContent = names.join(', ');
+                    });
+                }
+            }
         })();
     </script>
 }

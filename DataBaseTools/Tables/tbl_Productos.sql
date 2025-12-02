@@ -1,5 +1,6 @@
 CREATE TABLE tbl_Productos (
     nId INT IDENTITY(1,1) PRIMARY KEY,
+    nIdProveedor INT,
     nNombre VARCHAR(150) NOT NULL,
     iImage image,
     dFechaInsercion DATETIME NOT NULL DEFAULT GETDATE(),

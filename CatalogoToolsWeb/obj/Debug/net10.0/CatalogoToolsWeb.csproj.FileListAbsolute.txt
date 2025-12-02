@@ -407,7 +407,6 @@ C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\rjsmcshtml.dswa.cache
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\scopedcss\bundle\CatalogoToolsWeb.styles.css
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\scopedcss\projectbundle\CatalogoToolsWeb.bundle.scp.css
-C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\compressed\frhtai0964-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\compressed\tpfcgey3py-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\compressed\xoh05w7e2s-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\compressed\m2m9vfioxl-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -483,3 +482,4 @@ C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\refint\CatalogoToolsW
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\CatalogoToolsWeb.pdb
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\CatalogoToolsWeb.genruntimeconfig.cache
 C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\ref\CatalogoToolsWeb.dll
+C:\CatalogoToolsWebSite\CatalogoToolsWeb\obj\Debug\net10.0\compressed\frhtai0964-{0}-2tlsic2v9a-2tlsic2v9a.gz

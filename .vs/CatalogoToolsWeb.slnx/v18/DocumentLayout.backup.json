@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\CatalogoToolsWebSite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\views\\home\\catalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\views\\home\\catalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -29,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|c:\\catalogotoolswebsite\\catalogotoolsweb\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB02AC09-8BAA-963D-3FE4-3988C3D3F3AA}|CatalogoToolsWeb\\CatalogoToolsWeb.csproj|solutionrelative:catalogotoolsweb\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,12 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -62,64 +54,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "CatalogoToolsWeb\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-01T19:44:02.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Program.cs",
-              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Program.cs",
-              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Program.cs",
-              "RelativeToolTip": "CatalogoToolsWeb\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:01:08.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "CatalogoToolsWeb\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAjwF8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T19:58:53.08Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Models\\Producto.cs",
               "RelativeDocumentMoniker": "CatalogoToolsWeb\\Models\\Producto.cs",
               "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Models\\Producto.cs",
               "RelativeToolTip": "CatalogoToolsWeb\\Models\\Producto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:11:52.427Z"
+              "WhenOpened": "2025-12-02T17:33:55.956Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "CatalogoToolsWeb\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "CatalogoToolsWeb\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-12-01T20:49:39.726Z"
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "CatalogoToolsWeb\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAcwBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T21:12:07.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CatalogoToolsWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T19:58:53.08Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -129,9 +99,36 @@
               "RelativeDocumentMoniker": "CatalogoToolsWeb\\Views\\Home\\Catalog.cshtml",
               "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Home\\Catalog.cshtml",
               "RelativeToolTip": "CatalogoToolsWeb\\Views\\Home\\Catalog.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-01T21:03:28.469Z"
+              "WhenOpened": "2025-12-01T21:03:28.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Admin.cshtml",
+              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Home\\Admin.cshtml",
+              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Views\\Home\\Admin.cshtml",
+              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Home\\Admin.cshtml",
+              "RelativeToolTip": "CatalogoToolsWeb\\Views\\Home\\Admin.cshtml",
+              "ViewState": "AgIAACwBAAAAAAAAAAAAAOwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-01T19:44:02.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "CatalogoToolsWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "CatalogoToolsWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-02T00:51:12.921Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -141,21 +138,10 @@
               "RelativeDocumentMoniker": "CatalogoToolsWeb\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "CatalogoToolsWeb\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-01T20:43:07.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "CatalogoToolsWeb\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\CatalogoToolsWebSite\\CatalogoToolsWeb\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "CatalogoToolsWeb\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:12:07.079Z"
+              "WhenOpened": "2025-12-01T20:43:07.437Z",
+              "EditorCaption": ""
             }
           ]
         }

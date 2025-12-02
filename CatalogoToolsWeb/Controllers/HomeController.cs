@@ -16,7 +16,7 @@ namespace CatalogoToolsWeb.Controllers
         public HomeController(AppDbContext db) => _db = db;
 
         // Muestra todos los proveedores de forma asíncrona
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Admin()
         {
             var proveedores = await _db.Proveedores.ToListAsync();
             return View(proveedores);
@@ -74,7 +74,101 @@ namespace CatalogoToolsWeb.Controllers
             _db.Update(proveedor);
             await _db.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
+        }
+
+        // POST: subir múltiples imágenes y guardarlas en tbl_Productos
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UploadImages(int id, List<IFormFile> imageFiles)
+        {
+            var proveedor = await _db.Proveedores.FindAsync(id);
+            if (proveedor == null)
+            {
+                return NotFound();
+            }
+
+            if (imageFiles == null || imageFiles.Count == 0)
+            {
+                TempData["UploadImagesError"] = "Seleccione al menos una imagen.";
+                return RedirectToAction(nameof(Admin));
+            }
+
+            var errores = new List<string>();
+
+            using var conn = _db.Database.GetDbConnection();
+            await conn.OpenAsync();
+
+            var sqlConn = (SqlConnection)conn;
+            using var transaction = sqlConn.BeginTransaction();
+            try
+            {
+                using var cmd = sqlConn.CreateCommand();
+                cmd.Transaction = transaction;
+                cmd.CommandText = "INSERT INTO dbo.tbl_Productos (nIdProveedor, nNombre, iImage) VALUES (@nIdProveedor, @nNombre, @iImage);";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.Add(new SqlParameter("@nIdProveedor", SqlDbType.Int) { Value = id });
+                var pNombre = new SqlParameter("@nNombre", SqlDbType.VarChar, 150);
+                cmd.Parameters.Add(pNombre);
+                var pImage = new SqlParameter("@iImage", SqlDbType.VarBinary, -1);
+                cmd.Parameters.Add(pImage);
+
+                foreach (var file in imageFiles)
+                {
+                    if (file == null || file.Length == 0)
+                    {
+                        errores.Add("Archivo vacío.");
+                        continue;
+                    }
+
+                    if (file.Length > 2_000_000)
+                    {
+                        errores.Add($"'{file.FileName}' supera 2 MB.");
+                        continue;
+                    }
+
+                    if (!file.ContentType.StartsWith("image/"))
+                    {
+                        errores.Add($"'{file.FileName}' no es una imagen válida.");
+                        continue;
+                    }
+
+                    byte[] data;
+                    using (var ms = new MemoryStream())
+                    {
+                        await file.CopyToAsync(ms);
+                        data = ms.ToArray();
+                    }
+
+                    var fileName = Path.GetFileName(file.FileName) ?? "imagen";
+                    if (fileName.Length > 150) fileName = fileName.Substring(0, 150);
+
+                    pNombre.Value = fileName;
+                    pImage.Value = data;
+
+                    await cmd.ExecuteNonQueryAsync();
+                }
+
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                try { transaction.Rollback(); } catch { }
+                TempData["UploadImagesError"] = "Error al insertar imágenes: " + ex.Message;
+                return RedirectToAction(nameof(Admin));
+            }
+
+            if (errores.Count > 0)
+            {
+                TempData["UploadImagesError"] = string.Join(" | ", errores);
+            }
+            else
+            {
+                TempData["UploadImagesSuccess"] = "Imágenes subidas correctamente.";
+            }
+
+            return RedirectToAction(nameof(Admin));
         }
 
         // GET: formulario para crear proveedor
@@ -92,7 +186,7 @@ namespace CatalogoToolsWeb.Controllers
             {
                 ModelState.AddModelError("nombre", "El nombre es requerido.");
                 var lista = await _db.Proveedores.ToListAsync();
-                return View("Index", lista);
+                return View("Admin", lista);
             }
 
             byte[]? logo = null;
@@ -102,14 +196,14 @@ namespace CatalogoToolsWeb.Controllers
                 {
                     ModelState.AddModelError("logoFile", "El archivo es demasiado grande (máx. 2 MB).");
                     var lista = await _db.Proveedores.ToListAsync();
-                    return View("Index", lista);
+                    return View("Admin", lista);
                 }
 
                 if (!logoFile.ContentType.StartsWith("image/"))
                 {
                     ModelState.AddModelError("logoFile", "El archivo debe ser una imagen.");
                     var lista = await _db.Proveedores.ToListAsync();
-                    return View("Index", lista);
+                    return View("Admin", lista);
                 }
 
                 using var ms = new MemoryStream();
@@ -137,7 +231,7 @@ namespace CatalogoToolsWeb.Controllers
             // opcional: obtener el id insertado
             // var newId = pNewId.Value == DBNull.Value ? 0 : Convert.ToInt32(pNewId.Value);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
 
         // POST: cambiar estado activo/desactivo llamando al SP dbo.Set_tbl_ProveedorActivo
@@ -163,7 +257,7 @@ namespace CatalogoToolsWeb.Controllers
 
             await cmd.ExecuteNonQueryAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
 
         public IActionResult Catalog()
